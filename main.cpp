@@ -46,6 +46,11 @@ int main() {
     std::cout << "Size of array after clear: " << arr.size() << "\n";
     std::cout << "Array elements: ";
     printArray(arr);
+    
+    Array<int> init = {1, 2, 3, 4, 5};
+    
+    std::cout << "Initialized with initializer constructor: ";
+    printArray(init);
 
 
     return 0;

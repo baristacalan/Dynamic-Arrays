@@ -6,6 +6,20 @@ template <typename T>
 Array<T>::Array(size_t capacity) : m_size(0), m_capacity(capacity) {
     m_items = new T[m_capacity]; // Allocate memory for the array
 }
+
+template <typename T>
+Array<T>::Array(std::initializer_list<T> init) 
+: m_size(init.size()), m_capacity(init.size()) {
+    
+    m_items = new T[m_capacity];
+    size_t i = 0;
+    for(const T& elm : init) {
+        
+        m_items[i++] = elm;
+    }
+
+}
+
 // Copy Constructor
 template <typename T>
 Array<T>::Array(const Array& other)

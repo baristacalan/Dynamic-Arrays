@@ -13,6 +13,7 @@
  */
 template <typename T>
 class Array {
+
 private:
     T* m_items;        ///< Pointer to the dynamically allocated array
     size_t m_size;     ///< Current number of elements in the array
@@ -35,6 +36,12 @@ public:
      * @param capacity Initial capacity of the array (default is 32).
      */
     explicit Array(size_t capacity = 32);
+    
+    /**
+    * @brief Initialization constructor for direct manual initialization.
+    * @param Initialization items as type T.
+    */
+    Array(std::initializer_list<T> init);
 
     /**
     * @brief Copy constructor for deep copying the Array.
